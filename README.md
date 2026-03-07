@@ -72,7 +72,7 @@ Response -> Cache -> Client
 
 ## 📂 Project Structure
 
-
+```
 Multi-Threaded-proxy-server
 │
 ├── proxy_server.c
@@ -80,6 +80,6 @@ Multi-Threaded-proxy-server
 ├── cache.h
 ├── Makefile
 └── README.md
-
+```
 
 --
