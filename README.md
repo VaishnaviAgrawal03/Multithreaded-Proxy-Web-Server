@@ -1,39 +1,35 @@
-Multithreaded Proxy Web Server
+# Multithreaded Proxy Web Server
 
-A high-performance multithreaded HTTP proxy server implemented in C using socket programming. The server handles multiple client requests concurrently using POSIX threads, integrates thread synchronization mechanisms, and improves response time with a time-based LRU caching system.
+A high-performance **multithreaded HTTP proxy server** implemented in **C using TCP socket programming**. The server efficiently handles multiple client requests concurrently using **POSIX threads**, integrates **thread synchronization mechanisms**, and improves response time using a **time-based LRU caching system**.
 
-This project demonstrates practical concepts of computer networks, concurrency, memory management, and system-level programming.
+This project demonstrates key concepts of **computer networks, concurrency, caching systems, and system-level programming**.
 
-Features
+---
 
-Handles 100+ concurrent HTTP client requests using multithreading
+## 🚀 Features
 
-Built using low-level TCP socket programming in C
+- Handles **100+ concurrent HTTP client requests**
+- Built using **low-level TCP socket programming in C**
+- **Multithreaded architecture** using POSIX threads
+- Thread synchronization with **mutex locks and semaphores**
+- **Custom memory management** for efficient request processing
+- **Time-based LRU cache** for faster response delivery
+- Achieves **up to 5× faster response time** via parallel request handling
+- Supports standard **HTTP GET requests**
 
-Implements thread synchronization using:
+---
 
-Mutex locks
+## 🧠 System Architecture
 
-Semaphores
-
-Custom memory management for efficient request handling
-
-Time-based LRU cache to store frequently accessed responses
-
-Improves response time by up to 5× through parallel request processing
-
-Supports standard HTTP GET requests
-
-System Architecture
 Client Request
       |
       v
 Proxy Server (Multithreaded)
       |
-      |---- Thread Pool
+      |---- Thread Handler
       |        |
       |        v
-      |   Request Handler
+      |   Request Processing
       |
       |---- Cache Manager (LRU)
       |
@@ -42,36 +38,49 @@ Remote Web Server
       |
       v
 Response -> Cache -> Client
-Tech Stack
 
-Language: C
 
-Networking: TCP Socket Programming
+---
 
-Concurrency: POSIX Threads (pthreads)
+## 🛠 Tech Stack
 
-Synchronization: Mutex Locks, Semaphores
+| Technology | Usage |
+|------------|------|
+| C | Core implementation |
+| TCP Sockets | Network communication |
+| POSIX Threads (pthreads) | Multithreading |
+| Mutex Locks | Thread synchronization |
+| Semaphores | Resource management |
+| LRU Cache | Performance optimization |
 
-Caching: Time-based LRU Cache
+---
 
-Operating System: Linux / Unix
+## ⚙️ How It Works
 
-How It Works
+1. The proxy server listens for **incoming HTTP requests** from clients.
+2. Each request is assigned to a **separate thread**.
+3. The server checks whether the requested resource exists in the **LRU cache**.
+4. If the resource exists:
+   - The cached response is returned immediately.
+5. If the resource does not exist:
+   - The request is forwarded to the **target web server**.
+   - The server receives the response and forwards it to the client.
+   - The response is stored in the **cache for future requests**.
+6. **Mutex locks and semaphores ensure thread-safe access** to shared resources.
 
-The proxy server listens for incoming client HTTP requests.
+---
 
-Each request is handled by a separate thread to allow concurrent processing.
+## 📂 Project Structure
 
-The server checks whether the requested resource exists in the LRU cache.
 
-If present:
+Multi-Threaded-proxy-server
+│
+├── proxy_server.c
+├── cache.c
+├── cache.h
+├── Makefile
+└── README.md
 
-The cached response is returned immediately.
 
-If not:
-
-The request is forwarded to the target web server.
-
-The response is returned to the client and stored in the cache.
-
-Thread synchronization ensures safe concurrent access to shared cache memory.
+--
+https://github.com/Jahanvi021
