@@ -20,7 +20,7 @@ This project demonstrates key concepts of **computer networks, concurrency, cach
 ---
 
 ## 🧠 System Architecture
-
+```
 Client Request
       |
       v
@@ -38,7 +38,7 @@ Remote Web Server
       |
       v
 Response -> Cache -> Client
-
+```
 
 ---
 
@@ -83,4 +83,3 @@ Multi-Threaded-proxy-server
 
 
 --
-https://github.com/Jahanvi021
