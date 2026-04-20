@@ -39,6 +39,9 @@ Remote Web Server
       v
 Response -> Cache -> Client
 ```
+<img width="481" height="277" alt="image" src="https://github.com/user-attachments/assets/f05427ac-fb33-452d-bb54-9bf4457fcf7a" />
+
+<img width="543" height="340" alt="image" src="https://github.com/user-attachments/assets/a31a10be-616b-47d4-82b3-e28a59a58337" />
 
 ---
 
